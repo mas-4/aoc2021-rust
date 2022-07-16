@@ -52,3 +52,22 @@ pub fn aoc2_1() {
     }
     println!("AOC2.1: {}", x * y);
 }
+
+pub fn aoc2_2() {
+    let instructions = read_input();
+    let mut horizontal = 0;
+    let mut depth = 0;
+    let mut aim = 0;
+    for instruction in instructions {
+        match instruction.direction {
+            Direction::Up => aim -= instruction.distance,
+            Direction::Down => aim += instruction.distance,
+            Direction::Forward => {
+                horizontal += instruction.distance;
+                depth += instruction.distance * aim;
+
+            },
+        }
+    }
+    println!("AOC2.2: {}", horizontal * depth);
+}
