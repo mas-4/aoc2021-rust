@@ -8,4 +8,5 @@ fn main() {
     aoc2::aoc2_1();
     aoc2::aoc2_2();
     aoc3::aoc3_1();
+    aoc3::aoc3_2();
 }
