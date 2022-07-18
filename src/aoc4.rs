@@ -99,3 +99,20 @@ pub fn aoc4_1() {
         }
     }
 }
+
+pub fn aoc4_2() {
+    let (mut boards, nums) = read_input();
+
+    for num in nums {
+        for i in 0..boards.len() {
+            boards[i].mark(num);
+        }
+        if boards.len() > 1 {
+            boards = boards.into_iter().filter(|x| !x.bingo()).collect();
+        }
+        if boards.len() == 1 && boards[0].bingo() {
+            println!("AOC4.2: {}", boards[0].sum() * num);
+            return;
+        }
+    }
+}

@@ -11,4 +11,5 @@ fn main() {
     aoc3::aoc3_1();
     aoc3::aoc3_2();
     aoc4::aoc4_1();
+    aoc4::aoc4_2();
 }
