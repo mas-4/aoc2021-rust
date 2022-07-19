@@ -2,6 +2,7 @@ mod aoc1;
 mod aoc2;
 mod aoc3;
 mod aoc4;
+mod aoc5;
 
 fn main() {
     aoc1::aoc1_1();
@@ -12,4 +13,6 @@ fn main() {
     aoc3::aoc3_2();
     aoc4::aoc4_1();
     aoc4::aoc4_2();
+    aoc5::aoc5_1();
+    aoc5::aoc5_2();
 }
