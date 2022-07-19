@@ -6,10 +6,11 @@ struct Board {
     board: Vec<u32>,
     marked: Vec<bool>,
     size: usize,
+    name: i32
 }
 
 impl Board {
-    fn build(input: &[&str]) -> Self {
+    fn build(input: &[&str], name: i32) -> Self {
         let size = input.len();
         let marked = vec![false; size * size];
         let input = input.join(" ");
@@ -21,6 +22,7 @@ impl Board {
             board,
             marked,
             size,
+            name,
         }
     }
     fn mark(&mut self, num: u32) {
@@ -34,11 +36,11 @@ impl Board {
         for i in 0..self.size {
             let row = self.marked[i * self.size..(i + 1) * self.size].to_vec();
             let col = vec![
-                self.marked[i * self.size],
-                self.marked[i * self.size + 1],
-                self.marked[i * self.size + 2],
-                self.marked[i * self.size + 3],
-                self.marked[i * self.size + 4],
+                self.marked[i + (self.size * 0)],
+                self.marked[i + (self.size * 1)],
+                self.marked[i + (self.size * 2)],
+                self.marked[i + (self.size * 3)],
+                self.marked[i + (self.size * 4)],
             ];
             if row.iter().all(|x| *x) || col.iter().all(|x| *x) {
                 return true;
@@ -59,6 +61,7 @@ impl Board {
 
 impl fmt::Display for Board {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Board {}:\n", self.name)?;
         for i in 0..self.size {
             for j in 0..self.size {
                 if self.marked[i * self.size + j] {
@@ -83,7 +86,11 @@ fn read_input() -> (Vec<Board>, Vec<u32>) {
         .split(',')
         .map(|x| x.parse::<u32>().unwrap())
         .collect();
-    let boards = input[1..].chunks(5).map(|x| Board::build(x)).collect::<Vec<Board>>();
+    let boards = input[1..]
+        .chunks(5)
+        .enumerate()
+        .map(|(i, x)| Board::build(x, i as i32))
+        .collect::<Vec<Board>>();
     (boards, numbers)
 }
 
@@ -110,6 +117,7 @@ pub fn aoc4_2() {
         if boards.len() > 1 {
             boards = boards.into_iter().filter(|x| !x.bingo()).collect();
         }
+        // println!("{}", boards[0]);
         if boards.len() == 1 && boards[0].bingo() {
             println!("AOC4.2: {}", boards[0].sum() * num);
             return;
