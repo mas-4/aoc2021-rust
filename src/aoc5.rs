@@ -118,5 +118,5 @@ pub fn aoc5_2() {
             }
         }
     }
-    println!("AOC5.1: {}", count);
+    println!("AOC5.2: {}", count);
 }
