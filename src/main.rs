@@ -26,4 +26,5 @@ fn main() {
     aoc8::aoc8_1();
     aoc8::aoc8_2();
     aoc9::aoc9_1();
+    aoc9::aoc9_2();
 }
