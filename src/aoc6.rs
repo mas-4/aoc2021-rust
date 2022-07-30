@@ -23,7 +23,7 @@ impl Clone for LanternFish {
 }
 
 fn read_input() -> Vec<LanternFish> {
-    let input = fs::read_to_string("input/aoc6.txt").expect("Error reading input file");
+    let input = fs::read_to_string("input/aoc06.txt").expect("Error reading input file");
     let initial_state = input
         .split(',')
         .map(|x| x.parse::<i32>().expect(x))
@@ -32,7 +32,7 @@ fn read_input() -> Vec<LanternFish> {
 }
 
 fn read_input_u() -> Vec<u8> {
-    let input = fs::read_to_string("input/aoc6.txt").expect("Error reading input file");
+    let input = fs::read_to_string("input/aoc06.txt").expect("Error reading input file");
     input
         .split(',')
         .map(|x| x.parse::<u8>().expect(x))

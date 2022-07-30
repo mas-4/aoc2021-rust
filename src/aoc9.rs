@@ -16,7 +16,7 @@ impl Basin {
 
 
 fn get_input() -> Vec<Vec<u8>> {
-    let raw = include_str!("../input/aoc9.txt");
+    let raw = include_str!("../input/aoc09.txt");
     let maps = raw
         .trim()
         .lines()

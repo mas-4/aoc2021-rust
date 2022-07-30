@@ -77,7 +77,7 @@ impl fmt::Display for Board {
 }
 
 fn read_input() -> (Vec<Board>, Vec<u32>) {
-    let contents = fs::read_to_string("input/aoc4.txt").expect( "Couldn't open." );
+    let contents = fs::read_to_string("input/aoc04.txt").expect( "Couldn't open." );
     let input: Vec<&str> = contents
         .lines()
         .filter(|x| x.len() > 0)

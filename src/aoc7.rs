@@ -1,7 +1,7 @@
 use std::fs;
 
 fn read_input() -> Vec<i64> {
-    let input = fs::read_to_string("input/aoc7.txt")
+    let input = fs::read_to_string("input/aoc07.txt")
         .expect("Unable to read input file");
     input
         .trim()

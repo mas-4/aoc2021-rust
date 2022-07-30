@@ -1,5 +1,5 @@
 fn read_input() -> (Vec<Vec<String>>, Vec<Vec<String>>) {  // input output
-    let raw = include_str!("../input/aoc8.txt");
+    let raw = include_str!("../input/aoc08.txt");
     let mut input: Vec<Vec<String>> = Vec::new();
     let mut output: Vec<Vec<String>> = Vec::new();
     for line in raw.lines() {

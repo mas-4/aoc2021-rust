@@ -1,7 +1,7 @@
 use std::fs;
 
 fn read_input() -> Vec<i32> {
-    let contents = fs::read_to_string("input/aoc1.txt").expect( "Couldn't open." );
+    let contents = fs::read_to_string("input/aoc01.txt").expect( "Couldn't open." );
     let numbers = contents
         .trim()
         .split("\n")

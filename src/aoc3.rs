@@ -2,7 +2,7 @@ use std::fs;
 use std::usize;
 
 fn read_input() -> Vec<String> {
-    fs::read_to_string("input/aoc3.txt")
+    fs::read_to_string("input/aoc03.txt")
         .expect("Failed to read input file")
         .trim()
         .split('\n')

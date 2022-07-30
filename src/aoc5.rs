@@ -62,7 +62,7 @@ impl Grid {
 
 
 fn read_input() -> Vec<Line> {
-    let input = fs::read_to_string("input/aoc5.txt")
+    let input = fs::read_to_string("input/aoc05.txt")
         .expect("Something went wrong reading the file");
     let mut lines = Vec::new();
     for line in input.lines() {

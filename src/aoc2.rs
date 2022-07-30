@@ -30,7 +30,7 @@ impl FromStr for Instruction {
 }
 
 fn read_input() -> Vec<Instruction> {
-    let contents = fs::read_to_string("input/aoc2.txt").expect("Couldn't open.");
+    let contents = fs::read_to_string("input/aoc02.txt").expect("Couldn't open.");
     let instructions = contents
         .trim()
         .split("\n")
